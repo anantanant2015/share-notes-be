@@ -14,4 +14,4 @@ class UserSerializer(serializers.ModelSerializer):
 class UserNoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserNote
-        fields = ('id', 'user_id', 'note_id')
+        fields = ('id', 'user', 'note')
