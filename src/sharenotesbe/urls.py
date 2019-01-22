@@ -18,11 +18,13 @@ from django.urls import path
 from django.urls import path, include
 
 REST_FRAMEWORK = {
-	'DEFAULT_PERMISSION_CLASSES': [
-	'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly']
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
+    ]
 }
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls'))
+    path("admin/", admin.site.urls),
+    path("api/", include("sharenotes.api.urls")),
+    path("api-auth/", include("rest_framework.urls")),
 ]
